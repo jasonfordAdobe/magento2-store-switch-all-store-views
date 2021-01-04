@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="imi" translate="label" sortOrder="10">
-            <label>iMi</label>
+        <tab id="magentoese" translate="label" sortOrder="101">
+            <label>Magento ESE</label>
         </tab>
         <section id="imi_store_switch" translate="label" sortOrder="150" showInDefault="1" showInStore="1" showInWebsite="1">
             <class>separator-top</class>
             <label>Store Switch</label>
-            <tab>imi</tab>
+            <tab>magentoese</tab>
             <resource>IMI_StoreSwitch::config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInStore="1" showInWebsite="1">
                 <label>General</label>

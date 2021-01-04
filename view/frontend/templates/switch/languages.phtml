@@ -22,8 +22,8 @@ $context = $block->getData('context');
                 <div class="action toggle switcher-trigger" id="switcher-language-trigger<?php /* @escapeNotVerified */
                 echo $id ?>" data-storelanguage="<?= $currentStore->getCode()?>">
                     <span class="mobile-hint"><?php /* @escapeNotVerified */ echo __('Language') ?>:</span>
-                    <strong class="view-current-store-switch view-<?php echo $block->escapeHtml($block->getCurrentStoreCode()) ?>">
-                        <span><?= $block->escapeHtml($viewModel->getStoreSwitchLabel($currentStore)) ?></span>
+                    <strong class="view-current-store-switch view-<?php echo $block->escapeHtml($block->getCurrentStoreCode()) ?> flag-country <?= $block->escapeHtml($viewModel->getStoreSwitchCountryFlagCss($currentStore)) ?>">
+                        <span><?= $block->escapeHtml($viewModel->getStoreSwitchLabel($currentStore)) ?>
                     </strong>
                 </div>
                 <ul class="dropdown switcher-dropdown"
@@ -42,7 +42,8 @@ $context = $block->getData('context');
                             <?php if ($_store->getId() != $block->getCurrentStoreId() && $_store->isActive() && $viewModel->isEnabled($_store)): ?>
                                 <li class="view-<?php echo $block->escapeHtml($_store->getCode()); ?> switcher-option" data-storelanguage="<?php echo $block->escapeHtml($_store->getCode())?>">
                                     <a href="#" data-post='<?php /* @escapeNotVerified */
-                                    echo $block->getTargetStorePostData($_store); ?>'>
+                                    echo $block->getTargetStorePostData($_store); ?>'
+                                    class="flag-country <?= $block->escapeHtml($viewModel->getStoreSwitchCountryFlagCss($_store)) ?>">
                                         <?= $block->escapeHtml($viewModel->getStoreSwitchLabel($_store)) ?>
                                     </a>
                                 </li>

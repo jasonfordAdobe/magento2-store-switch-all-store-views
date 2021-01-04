@@ -195,6 +195,20 @@ class StoreSwitchModel implements ArgumentInterface
         if($showCountryOnly) {
             return $this->getStoreCountyCode($store);
         }
-        return $this->getParsedLanguage($store).'&nbsp;('.$this->getStoreCountyCode($store).')';
+        return $this->getParsedLanguage($store);
+    }
+
+    /**
+     * Get the formatted label for the dropdown, based on the format configuration.
+     * 
+     * @param StoreInterface $store
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function getStoreSwitchCountryFlagCss(StoreInterface $store): string 
+    {
+        $showCountryCode = $this->getStoreCountyCode($store);
+        return 'test flag-country-'.strtolower($showCountryCode);
     }
 }
