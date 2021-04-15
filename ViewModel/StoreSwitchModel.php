@@ -20,6 +20,8 @@ class StoreSwitchModel implements ArgumentInterface
 
     const MODULE_SHOW_COUNTRY_ONLY_CONFIG_PATH = 'imi_store_switch/general/show_country_only';
 
+    const MODULE_INCLUDE_IN_SWITCH_CONFIG_PATH = 'imi_store_switch/general/include_in_switch';
+
     const LOCALE_CONFIG_PATH = 'general/locale/code';
 
     const DEFAULT_COUNTRY_CONFIG_PATH = 'general/country/default';
@@ -210,5 +212,20 @@ class StoreSwitchModel implements ArgumentInterface
     {
         $showCountryCode = $this->getStoreCountyCode($store);
         return 'test flag-country-'.strtolower($showCountryCode);
+    }
+
+    /**
+     * Check if we should include this store-view in the dropdown
+     * 
+     * @param StoreInterface $store
+     *
+     * @return string
+     * @throws \Exception
+     */
+    public function includeStoreView(StoreInterface $store): string 
+    {
+        $showCountryOnly = $this->scopeConfig->getValue(self::MODULE_INCLUDE_IN_SWITCH_CONFIG_PATH, ScopeInterface::SCOPE_STORE, $store->getId());
+    
+        return $showCountryOnly;
     }
 }

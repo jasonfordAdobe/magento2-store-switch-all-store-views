@@ -39,7 +39,7 @@ $context = $block->getData('context');
                     <?php foreach ($websites as $website): ?>
                         <?php /** @var \Magento\Store\Model\Store $_store */?>
                         <?php foreach ($website->getStoreCollection() as $_store): ?>
-                            <?php if ($_store->getId() != $block->getCurrentStoreId() && $_store->isActive() && $viewModel->isEnabled($_store)): ?>
+                            <?php if ($_store->getId() != $block->getCurrentStoreId() && $_store->isActive() && $viewModel->isEnabled($_store) && $viewModel->includeStoreView($_store)): ?>
                                 <li class="view-<?php echo $block->escapeHtml($_store->getCode()); ?> switcher-option" data-storelanguage="<?php echo $block->escapeHtml($_store->getCode())?>">
                                     <a href="#" data-post='<?php /* @escapeNotVerified */
                                     echo $block->getTargetStorePostData($_store); ?>'

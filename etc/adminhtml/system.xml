@@ -20,6 +20,11 @@
                     <comment>If this option is enabled, the switch will only show the country code. Otherwise, country code and label will be shown.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="include_in_switch" translate="label" type="select" sortOrder="3" showInDefault="1" showInStore="1" showInWebsite="1" canRestore="1">
+                    <label>Include in Switch</label>
+                    <comment>Want to hide store views from the dropdown. Use this option for the store-views that you want to hide.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
             </group>
         </section>
     </system>

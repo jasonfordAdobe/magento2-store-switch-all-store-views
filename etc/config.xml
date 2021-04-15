@@ -5,6 +5,7 @@
             <general>
                 <enable>0</enable>
                 <show_country_only>0</show_country_only>
+                <include_in_switch>1</include_in_switch>
             </general>
         </imi_store_switch>
     </default>
